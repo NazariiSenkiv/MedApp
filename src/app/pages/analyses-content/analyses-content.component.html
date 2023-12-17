@@ -14,12 +14,11 @@
               class="search22"
               type="text"
               placeholder="Patient name"
+              [(ngModel)]="searchPatientName"
             />
           </div>
         </div>
-        <button class="search-bar27">
-          <div class="search23">Search</div>
-        </button>
+        
       </div>
       <div class="search-bar-parent1">
         <button class="search-bar28">
@@ -43,7 +42,11 @@
       </div>
     </div>
     <div class="list2">
-      <div class="table-row7" *ngFor="let item of analysesListContent" (dblclick)="selectAnalysis(item.id)">
+      <div 
+        class="table-row7" 
+        *ngFor="let item of analysesListContent | filterFullname: searchPatientName" 
+        (dblclick)="selectAnalysis(item.id)"
+        >
         <div class="placeholder21">
           <b class="text86">{{item.type}}</b>
         </div>

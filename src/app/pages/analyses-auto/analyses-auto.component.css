@@ -411,6 +411,13 @@
     mix-blend-mode: normal;
 }
 
+.done-button:hover {
+  background-color: var(--primary-btn-hover);
+}
+.done-button:active {
+  background-color: var(--primary-btn-clicked);
+}
+
 .frame-div,
   .search-bar27 {
     align-self: stretch;
@@ -892,6 +899,12 @@
     flex-direction: row;
     align-items: center;
   }
+  .table-row:hover {
+    background-color: var(--gray-6);
+  }
+  .selected-row, .selected-row:hover {
+    background-color: var(--gray-5);
+  }
   .search-bar13 {
     cursor: pointer;
     border: 0;
@@ -905,9 +918,16 @@
     box-sizing: border-box;
     gap: var(--gap-5xs);
   }
+
+  .search-bar13:hover {
+    background-color: var(--primary-btn-hover);
+  }
+  .search-bar13:active {
+    background-color: var(--primary-btn-clicked);
+  }
+
   .table-row {
     align-self: stretch;
-    background-color: var(--white);
     border-bottom: 1px solid var(--gray-5);
     justify-content: center;
   }

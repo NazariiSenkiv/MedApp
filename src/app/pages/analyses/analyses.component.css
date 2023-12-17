@@ -424,5 +424,12 @@
 }
 
 .done-button:disabled {
-  background-color: var(--blue-1-dis);;
+  background-color: var(--blue-1-dis);
+}
+
+.done-button:hover {
+  background-color: var(--primary-btn-hover);
+}
+.done-button:active {
+  background-color: var(--primary-btn-clicked);
 }

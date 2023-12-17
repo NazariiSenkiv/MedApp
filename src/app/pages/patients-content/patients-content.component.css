@@ -278,6 +278,14 @@
     align-items: center;
     box-sizing: border-box;
   }
+
+  .button1:hover {
+    background-color: var(--primary-btn-hover);
+  }
+  .button1:active {
+    background-color: var(--primary-btn-clicked);
+  }
+
   .round-button {
     padding: var(--padding-base);
     background-color: var(--gray-5);

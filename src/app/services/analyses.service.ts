@@ -235,8 +235,8 @@ export class AnalysesService {
   public updateAnalysis(id: number, analysis: Analysis): Observable<Analysis> {
     return this.http.put<Analysis>(`${this.analysisEndpoint}/${id}`, analysis)
   }
-  public addAnalysis(analysis: Analysis): Observable<Analysis> {
-    return this.http.post<Analysis>(`${this.analysisEndpoint}`, analysis)
+  public addAnalysis(analysis: Analysis): Observable<number> {
+    return this.http.post<number>(`${this.analysisEndpoint}`, analysis)
   }
 
 
