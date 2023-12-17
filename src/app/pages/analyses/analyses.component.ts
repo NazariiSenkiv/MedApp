@@ -82,7 +82,12 @@ export class AnalysesComponent {
                         if (foundAnalysis) {
                             this.analysis = foundAnalysis
             
-                            this.userName = userService.getFullNameById(foundAnalysis.patient_id)
+                            userService.getUserById(foundAnalysis.patient_id).subscribe({
+                                next: (patient) => {
+                                    this.userName = patient.name + " " + patient.surname
+                                },
+                                error: (e) => console.error(e),
+                            })
             
                             console.log("type_id = " + foundAnalysis.type_id)
 
