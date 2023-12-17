@@ -106,130 +106,130 @@ export class AnalysesService {
     return this.http.get<Analysis>(`${this.analysisEndpoint}/${analysisId}`)
   }
   // @userId - id of doctor, whose patients' analyses will be returned
-  public getAnalysesShortInfos(userId: number): AnalysisShortInfo[] {
-    // TODO: use user id
-    return [
-      {
-        id: 0,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 1,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 2,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 3,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 4,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 5,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 6,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 7,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 8,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 9,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 10,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 11,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 12,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 13,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 14,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 15,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 16,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 17,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 18,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      },
-      {
-        id: 19,
-        type: "whole blood",
-        patient_name: "John Doe",
-        date: "08.12.2023"
-      }
-    ]
+  public getAnalysesShortInfos(userId: number): Observable<AnalysisShortInfo[]> {
+    return this.http.get<AnalysisShortInfo[]>(`${this.userAnalysesEndpoint}/${userId}`)
+    /* return [
+    //   {
+    //     id: 0,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 1,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 2,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 3,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 4,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 5,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 6,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 7,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 8,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 9,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 10,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 11,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 12,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 13,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 14,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 15,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 16,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 17,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 18,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   },
+    //   {
+    //     id: 19,
+    //     type: "whole blood",
+    //     patient_name: "John Doe",
+    //     date: "08.12.2023"
+    //   }
+    // ] */
   }
 
   public updateAnalysis(id: number, analysis: Analysis): Observable<Analysis> {

@@ -4,6 +4,7 @@ import { NgFor } from '@angular/common';
 import { AnalysisShortInfo } from '../../interfaces/analysis';
 
 import { AnalysesService } from '../../services/analyses.service';
+import { CurrentUserService } from '../../services/current-user.service';
 
 @Component({
   selector: 'app-analyses-content',
@@ -14,12 +15,18 @@ import { AnalysesService } from '../../services/analyses.service';
 })
 export class AnalysesContentComponent {
 
-  protected analysesListContent: AnalysisShortInfo[]
+  protected analysesListContent: AnalysisShortInfo[] = []
 
-  constructor(private router: Router, private analysisService: AnalysesService) {
-    // TODO: get curren user id from somewhere
-    let currentUserId = 0
-    this.analysesListContent = this.analysisService.getAnalysesShortInfos(currentUserId)
+  constructor(private router: Router, private analysisService: AnalysesService, private currentUserService: CurrentUserService) {
+    let currentUserId = currentUserService.getCurrentUserId()
+
+    this.analysisService.getAnalysesShortInfos(currentUserId).subscribe({
+      next: (analysesShortInfo: AnalysisShortInfo[]) => {
+        console.log(analysesShortInfo)
+        this.analysesListContent = analysesShortInfo
+      },
+      error: (e) => console.error(e),
+    })
   }
 
   protected addAnalysis() {

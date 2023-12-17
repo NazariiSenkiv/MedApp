@@ -18,5 +18,6 @@ export interface AnalysisShortInfo {
     id: number
     type: string
     patient_name: string
+    patient_surname: string
     date: string
 }
