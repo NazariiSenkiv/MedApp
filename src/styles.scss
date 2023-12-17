@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --link: Roboto;
+  
+    /* font sizes */
+    --link-size: 16px;
+    --header-1-size: 32px;
+    --font-size-sm: 14px;
+    --small-size: 12px;
+    --font-size-smi: 13px;
+    --font-size-mini: 15px;
+  
+    /* Colors */
+    --white: #fff;
+    --blue-1: #2f80ed;
+    --color-dodgerblue-100: rgba(47, 128, 237, 0.15);
+    --gray-1: #333;
+    --gray-5: #e0e0e0;
+    --color-whitesmoke-100: #f4f4f4;
+    --gray-6: #f2f2f2;
+    --gray-2: #4f4f4f;
+    --blue-2: #2d9cdb;
+    --color-gray: #828282;
+    --dark-grey: #707c8b;
+    --grey-li: #929ba7;
+    --grey-lii: #b5bbc2;
+    --color-mediumblue: #3e3aff;
+  
+    /* Gaps */
+    --gap-base: 16px;
+    --gap-9xs: 4px;
+    --gap-5xs: 8px;
+    --gap-7xs: 6px;
+    --gap-11xs: 2px;
+  
+    /* Paddings */
+    --padding-13xl: 32px;
+    --padding-5xl: 24px;
+    --padding-base: 16px;
+    --padding-smi: 13px;
+    --padding-5xs: 8px;
+    --padding-xs: 12px;
+    --padding-9xs: 4px;
+    --padding-21xl: 40px;
+    --padding-sm: 14px;
+    --padding-11xs: 2px;
+  
+    /* Border radiuses */
+    --br-9xs: 4px;
+    --br-5xs: 8px;
+    --br-7xs: 6px;
+    --br-3xs: 10px;
+    --br-81xl: 100px;
+  }
+  

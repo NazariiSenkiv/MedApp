@@ -1,0 +1,151 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+<div class="view-analyses">
+    <app-header></app-header>
+
+    <!-- bread chramps -->
+    <div class="container">
+        <button class="search-bar25">
+            <a class="analyses5">Analyses</a>
+            <div class="div9">/</div>
+            <a class="analyses5">Blood Analyses </a>
+            <div class="div9">/</div>
+            <a class="analyses5">68000000005</a>
+        </button>
+    </div>
+
+    <div class="body">
+        <div class="container">
+            <div class="row justify-content-end">
+                <button class="action-button" (click)="back()">
+                    <img
+                    class="add-square-icon"
+                    alt=""
+                    src="assets/img/arrow-left.svg"
+                    />
+                    <div class="search24">Back</div>
+                </button>
+            </div>
+            <div class="row justify-content-end">
+                <button class="done-button">
+                    <img
+                    class="add-square-icon"
+                    alt=""
+                    src="assets/img/save.svg"
+                    />
+                    <div class="">Read data</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input20">
+                <div class="base22">
+                <div class="container40">
+                    <input disabled class="form-field22" type="text" [(ngModel)]="userName"/>
+    
+                    <img
+                    class="icon-outside22"
+                    alt=""
+                    src="assets/img/icon-outside.svg"
+                    />
+    
+                    <label class="label35">
+                    <div class="text68">Name</div>
+                    </label>
+                </div>
+                <div class="hint-error22">
+                    <div class="text68">Hint or Error Message</div>
+                </div>
+                </div>
+            </div>
+            <div class="input20">
+                <div class="base22">
+                <div class="container40">
+                    <input disabled class="form-field22" type="text" [(ngModel)]="date"/>
+    
+                    <img
+                    class="icon-outside22"
+                    alt=""
+                    src="assets/img/icon-outside.svg"
+                    />
+    
+                    <div class="label35">
+                        <div class="text68">Date</div>
+                    </div>
+                </div>
+                <div class="hint-error22">
+                    <div class="text68">Hint or Error Message</div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container space">
+            <div class="frame-div">
+                <div class="search-bar26">
+                    <img
+                        class="add-square-icon"
+                        alt=""
+                        src="assets/img/iconsearch.svg"
+                    />
+
+                    <div class="search-container">
+                        <input
+                        class="search22"
+                        type="text"
+                        placeholder="Patient name"
+                        />
+                    </div>
+                </div>
+                <button class="search-bar27">
+                    <div class="search23">Search</div>
+                </button>
+            </div>
+            <div class="search-bar-parent1">
+                <button class="search-bar28">
+                <img
+                    class="add-square-icon"
+                    alt=""
+                    src="assets/img/filter1.svg"
+                />
+
+                <div class="search24">Filter</div>
+                </button>
+                <button class="search-bar28">
+                <img
+                    class="add-square-icon"
+                    alt=""
+                    src="assets/img/arrow-sort-down-lines1.svg"
+                />
+
+                <div class="search24">Sort</div>
+                </button>
+            </div>
+        </div>
+
+        <section class="list1">
+            <div *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]" class="table-row">
+              <div class="placeholder">
+                <b class="text31">Blood pressure sensor</b>
+              </div>
+              <div class="placeholder1">
+                <div class="text32">Sensor</div>
+              </div>
+              <div class="placeholder2">
+                <div class="text32">Online</div>
+              </div>
+              <button class="search-bar13">
+                <img
+                  class="save-icon"
+                  alt=""
+                  src="assets/img/arrow-counterclockwise.svg"
+                />
+    
+                <div class="search5">Refresh</div>
+              </button>
+            </div>
+            
+        </section>
+        
+    </div>
+</div>

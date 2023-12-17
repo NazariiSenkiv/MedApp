@@ -1,0 +1,225 @@
+.search-bar25 {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-5xs);
+    background-color: transparent;
+    border-radius: var(--br-5xs);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-5xs);
+}
+
+.analyses5 {
+    text-decoration: none;
+}
+.analyses5{
+    position: relative;
+    font-size: var(--small-size);
+    font-weight: 300;
+    font-family: var(--link);
+    color: var(--color-gray);
+    text-align: left;
+}
+
+.body {
+    width: 60vw;
+    margin: 10vh auto;
+    height: 100vh;
+    align-content: center;
+    align-items: center;
+    gap: var(--gap-7xs);
+}
+
+.briefcase-medical-icon2 {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .background2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: var(--gray-2);
+  }
+  .path-icon3 {
+    height: 30.83%;
+    width: 50%;
+    top: 35.83%;
+    right: 25%;
+    bottom: 33.33%;
+    left: 25%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .expand-more2 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  .profile-menu2 {
+    width: 65px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .form-field,
+  .header2 {
+    box-sizing: border-box;
+  }
+  .header2 {
+    background-color: var(--blue-2);
+    width: 1280px;
+    height: 64px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--padding-base) 0 var(--padding-21xl);
+  }
+  .form-field {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--br-3xs);
+    border: 1px solid var(--grey-li);
+  }
+  .icon-outside {
+    width: 16px;
+    height: 16px;
+    display: none;
+  }
+  .text {
+    position: relative;
+    line-height: 135%;
+  }
+  .label12 {
+    cursor: pointer;
+    position: absolute;
+    top: -14px;
+    left: 12px;
+    border-radius: var(--br-7xs);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-11xs) var(--padding-5xs);
+  }
+  .container17 {
+    align-self: stretch;
+    position: relative;
+    height: 56px;
+  }
+  .hint-error {
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0 var(--padding-9xs);
+    font-size: var(--font-size-smi);
+  }
+  .base,
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 3%;
+  }
+  .base {
+    align-self: stretch;
+    flex: 1;
+    gap: var(--gap-7xs);
+  }
+  .dropdown,
+  .dropdown1,
+  .dropdown2 {
+    width: 40vw;
+    padding: var(--padding-sm) 0 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .dropdown1,
+  .label15 {
+    position: relative;
+    font-size: var(--link-size);
+    line-height: 24px;
+    font-weight: 500;
+    font-family: var(--link);
+    color: var(--white);
+    text-align: center;
+  }
+  .chevron-right-icon1 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  .action1 {
+    cursor: pointer;
+    border: 0;
+    padding: 0 var(--padding-base) 0 var(--padding-5xl);
+    background-color: var(--blue-1);
+    border-radius: var(--br-9xs);
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: var(--gap-9xs);
+    margin: 0 auto;
+  }
+  .blood-analyses,
+  .div {
+    font-size: var(--small-size);
+    font-weight: 300;
+    font-family: var(--link);
+    color: var(--color-gray);
+    text-align: left;
+  }
+  .blood-analyses {
+    text-decoration: none;
+  }
+  .search-bar3 {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-5xs);
+    background-color: transparent;
+    border-radius: var(--br-5xs);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-5xs);
+  }
+  .add-analyses {
+    background-color: var(--white);
+    overflow: hidden;
+    font-size: var(--font-size-mini);
+    color: var(--dark-grey);
+    font-family: var(--link);
+  }
+  
+  .center {
+    text-align: center;
+  }
+
+#btn-container {
+  padding: 3vh;
+}

@@ -1,0 +1,100 @@
+.header1,
+.patient-icon1,
+.profile-menu1 {
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.header1 {
+    align-self: stretch;
+    background-color: var(--blue-2);
+    height: 6.5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--padding-base) 0 var(--padding-21xl);
+    box-sizing: border-box;
+}
+
+.briefcase-medical-icon1 {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-menu1 {
+    width: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-button1 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.background1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--gray-2);
+}
+
+.person {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    width: 24px;
+    height: 24px;
+}
+
+.path-icon1 {
+    position: absolute;
+    height: 66.67%;
+    width: 66.67%;
+    top: 16.67%;
+    right: 16.67%;
+    bottom: 16.67%;
+    left: 16.67%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.expand-more1 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.path-icon2 {
+    position: absolute;
+    height: 30.83%;
+    width: 50%;
+    top: 35.83%;
+    right: 25%;
+    bottom: 33.33%;
+    left: 25%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}

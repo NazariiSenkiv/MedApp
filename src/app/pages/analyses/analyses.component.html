@@ -1,0 +1,189 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+<div class="view-analyses">
+    <app-header></app-header>
+
+    <!-- bread chramps -->
+    <div class="container">
+        <button class="search-bar25">
+            <a class="analyses5">Analyses</a>
+            <div class="div9">/</div>
+            <a class="analyses5">Blood Analyses </a>
+            <div class="div9">/</div>
+            <a class="analyses5">68000000005</a>
+        </button>
+    </div>
+
+    <form class="body" #formResult="ngForm" (ngSubmit)="saveChanges(formResult)">
+        <div *ngIf="!editMode" class="container">
+            <div class="frame-div"></div>
+            <div class="row justify-content-end">
+                <div class="search-bar-parent1">
+                    <button class="action-button">
+                        <img
+                        class="add-square-icon"
+                        alt=""
+                        src="assets/img/arrow-download.svg"
+                        />
+                        <div class="search24">Download</div>
+                    </button>
+                    <button (click)="editMode = true" class="action-button">
+                        <img
+                        class="add-square-icon"
+                        alt=""
+                        src="assets/img/edit.svg"
+                        />
+                        <div class="search24">Edit</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="editMode" class="container">
+            <div class="row justify-content-end">
+                <button (click)="back()" class="action-button">
+                    <img
+                    class="add-square-icon"
+                    alt=""
+                    src="assets/img/arrow-left.svg"
+                    />
+                    <div class="search24">Back</div>
+                </button>
+            </div>
+            <div type="submit" class="row justify-content-end">
+                <button class="done-button">
+                    <img
+                    class="add-square-icon"
+                    alt=""
+                    src="assets/img/save.svg"
+                    />
+                    <div class="search24">Save</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Name and date -->
+        <div class="fields-container">
+            <div class="row">
+                <div class="input20">
+                    <div class="base22">
+                        <div class="container40">
+                        <input disabled name="patient_name" 
+                            [class]="editMode ? 'form-field22 custom-disable' : 'form-field22'" type="text" 
+                            [(ngModel)]="userName"/>
+        
+                        <img
+                            class="icon-outside22"
+                            alt=""
+                            src="assets/img/icon-outside.svg"
+                        />
+        
+                        <label class="label35">
+                            <div class="text68">Name</div>
+                        </label>
+                    </div>
+                    <div class="hint-error22">
+                        <div class="text68">Hint or Error Message</div>
+                    </div>
+                    </div>
+                </div>
+                <div class="input20">
+                    <div class="base22">
+                    <div class="container40">
+                        <input disabled name="date" 
+                            [class]="editMode ? 'form-field22 custom-disable' : 'form-field22'" 
+                            [(ngModel)]="analysis.date"/>
+        
+                        <img
+                            class="icon-outside22"
+                            alt=""
+                            src="assets/img/icon-outside.svg"
+                        />
+        
+                        <div class="label35">
+                            <div class="text68">Date</div>
+                        </div>
+                    </div>
+                    <div class="hint-error22">
+                        <div class="text68">Hint or Error Message</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis type -->
+            <div class="row">
+                <div class="dropdown4">
+                    <div class="base22">
+                        <div class="container40">
+                            <select name="analyses-type" disabled [class]="editMode ? 'form-field30 custom-disable' : 'form-field30'" 
+                                    [(ngModel)]="analysesType.name">
+                                <option 
+                                    *ngFor="let typeName of analysesTypeNames" 
+                                    >
+                                    {{typeName}}
+                                </option>
+                            </select>
+                            <img
+                                class="icon-outside22"
+                                alt=""
+                                src="assets/img/icon-outside.svg"
+                            />
+
+                            <label class="label35">
+                            <div class="text68">Type of analysis</div>
+                            </label>
+                        </div>
+                        <div class="hint-error22">
+                            <div class="text68">Hint or Error Message</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngFor="let fields_pair of analysesType.fields | chunk: 2" class="row">
+                <div *ngIf="fields_pair[0]" class="input20">
+                    <div class="base22">
+                        <div class="container40">
+                            <input 
+                                [name]="fields_pair[0].tag" [disabled]="!editMode" class="form-field22" 
+                                [type]="fields_pair[0].type"
+                                [ngModel]="getFieldValue(fields_pair[0].tag)">
+
+                            <img class="icon-outside22" src="assets/img/icon-outside.svg" />
+
+                            <div class="label35">
+                                <div class="text68">
+                                    {{fields_pair[0].name}}{{fields_pair[0].measurement ? ", " + fields_pair[0].measurement : ""}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hint-error22">
+                            <div class="text68">Hint or Error Message</div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="fields_pair[1]" class="input20">
+                    <div class="base25">
+                        <div class="container40">
+                            <input 
+                                [name]="fields_pair[1].tag" 
+                                [disabled]="!editMode" class="form-field22" 
+                                [type]="fields_pair[1].type" 
+                                [ngModel]="getFieldValue(fields_pair[1].tag)"/>
+
+                            <img class="icon-outside22" src="assets/img/icon-outside.svg" />
+
+                            <label class="label35">
+                                <div class="text68">
+                                    {{fields_pair[1].name}}{{fields_pair[1].measurement ? ", " + fields_pair[1].measurement : ""}}
+                                </div>
+                            </label>
+                        </div>
+                        <div class="hint-error22">
+                            <div class="text68">Hint or Error Message</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

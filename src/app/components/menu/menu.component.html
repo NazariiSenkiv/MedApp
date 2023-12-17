@@ -1,0 +1,18 @@
+<div>
+    <button [class]="currentOption == 'patients' ? 'menu-button button-active' : 'menu-button'" (mousedown)="handleClicked('patients')" >
+      <img [class]="currentOption == 'patients' ? 'img-clicked' : 'patient-icon1'" alt="" src="assets/img/patient1.svg" />
+      <div class="">Patients</div>
+    </button>
+    <button [class]="currentOption == 'analyses' ? 'menu-button button-active' : 'menu-button'" (mousedown)="handleClicked('analyses')" >
+      <img [class]="currentOption == 'analyses' ? 'img-clicked' : 'patient-icon1'" alt="" src="assets/img/patch.svg" />
+      <div class="">Analyses</div>
+    </button>
+    <button [class]="currentOption == 'calendar' ? 'menu-button button-active' : 'menu-button'" (mousedown)="handleClicked('calendar')" >
+      <img [class]="currentOption == 'calendar' ? 'img-clicked' : 'patient-icon1'" alt="" src="assets/img/calendar.svg" />
+      <div class="">Calendar</div>
+    </button>
+    <button [class]="currentOption == 'history' ? 'menu-button button-active' : 'menu-button'" (mousedown)="handleClicked('history')" >
+      <img [class]="currentOption == 'history' ? 'img-clicked' : 'patient-icon1'" alt="" src="assets/img/history.svg" />
+      <div class="">History</div>
+    </button>
+</div>

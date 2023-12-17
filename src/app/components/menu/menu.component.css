@@ -1,0 +1,61 @@
+.menu-button,
+.menu1 {
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: var(--gap-5xs);
+}
+
+.menu-button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 0 var(--padding-5xs);
+    background-color: transparent;
+    align-self: stretch;
+    height: 48px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+
+    flex: 1;
+    position: relative;
+    font-size: var(--link-size);
+    font-weight: 300;
+    font-family: var(--link);
+    color: var(--gray-6);
+    text-align: left;
+}
+
+.menu-button:hover{
+  background-color: var(--gray-1);
+}
+
+.menu-button:active,
+.button-active,
+.button-active:hover {
+  background-color: white;
+  color: var(--blue-2);
+}
+
+.patient-icon1,
+.profile-menu1 {
+    color: white;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.patient-icon1 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.img-clicked {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  filter: invert(61%) sepia(26%) saturate(5525%) hue-rotate(173deg) brightness(92%) contrast(85%);
+}

@@ -1,0 +1,150 @@
+.label,
+.login1 {
+  position: relative;
+}
+.login1 {
+  margin: 0;
+  flex: 1;
+  font-size: var(--header-1-size);
+  font-weight: 700;
+  font-family: inherit;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 401px;
+}
+.label {
+  font-weight: 300;
+}
+.field {
+  border: 1px solid var(--gray-5);
+  font-weight: 500;
+  font-family: var(--link);
+  font-size: var(--link-size);
+  background-color: var(--white);
+  flex: 1;
+  border-radius: var(--br-9xs);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-smi) var(--padding-5xs);
+}
+.field,
+.field1,
+.input {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.input {
+  height: 67px;
+  flex-direction: column;
+  position: relative;
+}
+.field1 {
+  border: 1px solid var(--gray-5);
+  background-color: var(--white);
+  flex: 1;
+  border-radius: var(--br-9xs);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-smi) var(--padding-5xs);
+}
+.label2 {
+  position: relative;
+  font-size: var(--link-size);
+  line-height: 24px;
+  font-weight: 500;
+  font-family: var(--link);
+  color: var(--white);
+  text-align: center;
+}
+.chevron-right-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.action {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-base) 0 var(--padding-5xl);
+  background-color: var(--blue-1);
+  border-radius: var(--br-9xs);
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: var(--gap-9xs);
+}
+.label3 {
+  text-decoration: underline;
+  position: relative;
+  font-size: var(--link-size);
+  font-weight: 500;
+  font-family: var(--link);
+  color: var(--gray-1);
+  text-align: center;
+}
+.button,
+.dialog,
+.login {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.button {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-5xl);
+  background-color: transparent;
+  border-radius: var(--br-9xs);
+  height: 48px;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.dialog,
+.login {
+  flex-direction: column;
+}
+.dialog {
+  border-radius: 16px;
+  background-color: var(--white);
+  border: 2px solid var(--blue-1);
+  box-sizing: border-box;
+  width: 465px;
+  justify-content: flex-start;
+  padding: var(--padding-13xl);
+  gap: var(--gap-base);
+}
+.login {
+  position: relative;
+  background: linear-gradient(
+      rgba(47, 128, 237, 0.15),
+      rgba(47, 128, 237, 0.15)
+    ),
+    #fff;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  text-align: left;
+  font-size: var(--link-size);
+  color: var(--gray-1);
+  font-family: var(--link);
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}

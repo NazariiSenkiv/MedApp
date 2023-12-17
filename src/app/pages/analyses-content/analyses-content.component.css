@@ -1,0 +1,382 @@
+.analyses8 {
+    align-self: stretch;
+    position: relative;
+}
+.analyses8 {
+    margin: 0;
+    align-self: stretch;
+    position: relative;
+    font-size: var(--header-1-size);
+    font-weight: 700;
+    font-family: inherit;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--gap-base);
+}
+.container {
+    justify-content: space-between;
+    margin: 16px 0px;
+    padding: var(--padding-5xs);
+}
+
+  .briefcase-medical-icon7 {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .background7 {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--gray-2);
+  }
+  .person-icon14 {
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    width: 24px;
+    height: 24px;
+  }
+  .profile-button7 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+  .path-icon8 {
+    height: 30.83%;
+    width: 50%;
+    top: 35.83%;
+    right: 25%;
+    bottom: 33.33%;
+    left: 25%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .expand-more7 {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  .header7,
+  .profile-menu7 {
+    width: 65px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header7 {
+    background-color: var(--blue-2);
+    width: 1280px;
+    height: 64px;
+    padding: 0 var(--padding-base) 0 var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .patients4 {
+    flex: 1;
+    position: relative;
+    font-size: var(--link-size);
+    font-weight: 300;
+    font-family: var(--link);
+    color: var(--gray-6);
+    text-align: left;
+  }
+  .list-item8 {
+    cursor: pointer;
+    border: 0;
+    padding: 0 var(--padding-5xs);
+    background-color: transparent;
+    align-self: stretch;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: var(--gap-5xs);
+  }
+  .analyses7 {
+    flex: 1;
+    position: relative;
+    font-size: var(--link-size);
+    font-weight: 300;
+    font-family: var(--link);
+    color: var(--blue-2);
+    text-align: left;
+  }
+  .list-item9,
+  .menu2 {
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: var(--gap-5xs);
+  }
+  .list-item9 {
+    cursor: pointer;
+    border: 0;
+    padding: 0 var(--padding-5xs);
+    background-color: var(--white);
+    align-self: stretch;
+    border-radius: var(--br-5xs);
+    height: 48px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .menu2 {
+    background-color: var(--gray-2);
+    width: 240px;
+    height: 789px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--padding-5xs) var(--padding-base) var(--padding-9xs);
+  }
+  
+  .search22 {
+    border: 0;
+    font-family: var(--link);
+    font-size: var(--font-size-sm);
+    background-color: transparent;
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    line-height: 125%;
+    color: var(--gray-1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    mix-blend-mode: normal;
+  }
+  .search-bar26,
+  .search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .search-container {
+    align-self: stretch;
+    flex: 1;
+    align-items: flex-start;
+  }
+  .search-bar26 {
+    border-radius: var(--br-5xs);
+    background-color: var(--gray-6);
+    width: 420px;
+    overflow: hidden;
+    flex-shrink: 0;
+    align-items: center;
+    padding: var(--padding-5xs);
+    box-sizing: border-box;
+    gap: var(--gap-5xs);
+  }
+  .search23 {
+    position: relative;
+    font-size: var(--font-size-sm);
+    line-height: 125%;
+    font-family: var(--link);
+    color: var(--white);
+    text-align: left;
+    mix-blend-mode: normal;
+  }
+  .frame-div,
+  .search-bar27 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .search-bar27 {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-5xs) var(--padding-base);
+    background-color: var(--blue-1);
+    border-radius: var(--br-5xs);
+    overflow: hidden;
+    align-items: center;
+    margin-left: -10px;
+  }
+  .frame-div {
+    align-items: flex-start;
+  }
+  .search24 {
+    position: relative;
+    font-size: var(--font-size-sm);
+    line-height: 125%;
+    font-family: var(--link);
+    color: var(--gray-1);
+    text-align: left;
+    mix-blend-mode: normal;
+  }
+  .search-bar28 {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-5xs);
+    background-color: var(--gray-6);
+    border-radius: var(--br-5xs);
+    width: 120px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: var(--gap-5xs);
+  }
+  .container49,
+  .search-bar-parent1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .search-bar-parent1 {
+    justify-content: flex-start;
+    gap: var(--gap-base);
+  }
+  .container49 {
+    top: 86px;
+    left: 32px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .text86 {
+    position: relative;
+  }
+  .placeholder21 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-base) var(--padding-13xl);
+  }
+  .text87 {
+    position: relative;
+    font-weight: 300;
+  }
+  .placeholder22 {
+    width: 22vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-base) var(--padding-13xl);
+    box-sizing: border-box;
+  }
+  .placeholder22,
+  .placeholder23,
+  .table-row7 {
+    display: flex;
+    flex-direction: row;
+  }
+  .placeholder23 {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-base) var(--padding-13xl);
+  }
+  .table-row7 {
+    border-bottom: 1px solid var(--gray-5);
+    box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .table-row7:hover {
+    background-color: var(--gray-6);
+  }
+  .list2::-webkit-scrollbar {
+    display: none;
+  }
+  .list2 {
+    top: 142px;
+    left: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: var(--link-size);
+    height: 70vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .add-square-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .search26 {
+    position: relative;
+    font-size: var(--font-size-sm);
+    line-height: 125%;
+    font-family: var(--link);
+    color: var(--gray-5);
+    text-align: left;
+    mix-blend-mode: normal;
+  }
+.add-button-pos {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-5xs);
+    background-color: var(--blue-1);
+    border-radius: var(--br-5xs);
+    width: 120px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: var(--gap-5xs);
+}
+.add-button-pos {
+    position: absolute;
+    right: 2vw;
+    bottom: 5vh;
+}
+  .analyses6,
+  .content8 {
+    position: relative;
+    background-color: var(--white);
+    overflow: hidden;
+  }
+  .content8 {
+    align-self: stretch;
+    flex: 1;
+  }
+  .analyses6 {
+    width: 100%;
+    height: 853px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: var(--header-1-size);
+    color: var(--gray-1);
+    font-family: var(--link);
+  }
+  

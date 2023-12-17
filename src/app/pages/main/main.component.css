@@ -1,0 +1,53 @@
+.header1,
+.patient-icon1,
+.profile-menu1 {
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.patient-icon1 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .menu1 {
+    background-color: var(--gray-2);
+    width: 12.6%;
+    height: 91.7vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--padding-5xs) var(--padding-base) var(--padding-9xs);
+  }
+  
+  
+  .content1 {
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-13xl);
+    padding-bottom: 0px;
+  }
+  .body1,
+  .content1,
+  .main {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .body1 {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    font-size: var(--link-size);
+    color: var(--gray-1);
+    font-family: var(--link);
+  }
+  .main {
+    position: relative;
+    background-color: var(--white);
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+  }
+  

@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+<div class="view-analyses">
+    <app-header></app-header>
+
+    <!-- bread chramps -->
+    <div class="container">
+        <button class="search-bar25">
+            <a class="analyses5">Analyses</a>
+            <div class="div9">/</div>
+            <a class="analyses5">Blood Analyses </a>
+            <div class="div9">/</div>
+            <a class="analyses5">68000000005</a>
+        </button>
+    </div>
+
+    <div class="add-analyses body">
+        
+        <div class="dropdown">
+          <div class="base">
+            <div class="container17">
+              <select class="form-field" [(ngModel)]="selected_patient_id">
+                <option *ngFor="let patient of patients" [value]="patient.id">{{patient.name + " " + patient.surname}}</option>
+              </select>
+              <img class="icon-outside" alt="" src="./public/icon-outside.svg" />
+  
+              <label class="label12">
+                <div class="text">Patient’s name</div>
+              </label>
+            </div>
+            <div class="hint-error">
+              <div class="text">Hint or Error Message</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="base">
+              <div class="container17">
+                <select class="form-field" [(ngModel)]="selected_analyses_type_id">
+                  <option *ngFor="let type of analysesTypes" [value]="type.id">{{type.name}}</option>
+                </select>
+                <img class="icon-outside" alt="" src="./public/icon-outside.svg" />
+    
+                <label class="label12">
+                  <div class="text">Type of analysis</div>
+                </label>
+              </div>
+              <div class="hint-error">
+                <div class="text">Hint or Error Message</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="base">
+              <div class="container17">
+                <select [(ngModel)]="analysisGetType" class="form-field">
+                  <option value="Auto">Auto</option>
+                  <option value="Manual">Manual</option>
+                </select>
+                <img class="icon-outside" alt="" src="./public/icon-outside.svg" />
+    
+                <label class="label12">
+                  <div class="text">Type of analysis</div>
+                </label>
+              </div>
+              <div class="hint-error">
+                <div class="text">Hint or Error Message</div>
+              </div>
+            </div>
+         </div>
+          
+
+        <div id="btn-container">
+            <button class="action1" (click)="toNextPage()">
+                <div class="label15">Next</div>
+                <img class="chevron-right-icon1" alt="" src="assets/img/chevronright.svg" />
+            </button>
+        </div>
+        
+    </div>
+</div>

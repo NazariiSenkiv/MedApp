@@ -1,0 +1,63 @@
+<div>
+    <h1 class="analyses8">Analyses</h1>
+    <div class="container">
+      <div class="frame-div">
+        <div class="search-bar26">
+          <img
+            class="add-square-icon"
+            alt=""
+            src="assets/img/iconsearch.svg"
+          />
+
+          <div class="search-container">
+            <input
+              class="search22"
+              type="text"
+              placeholder="Patient name"
+            />
+          </div>
+        </div>
+        <button class="search-bar27">
+          <div class="search23">Search</div>
+        </button>
+      </div>
+      <div class="search-bar-parent1">
+        <button class="search-bar28">
+          <img
+            class="add-square-icon"
+            alt=""
+            src="assets/img/filter1.svg"
+          />
+
+          <div class="search24">Filter</div>
+        </button>
+        <button class="search-bar28">
+          <img
+            class="add-square-icon"
+            alt=""
+            src="assets/img/arrow-sort-down-lines1.svg"
+          />
+
+          <div class="search24">Sort</div>
+        </button>
+      </div>
+    </div>
+    <div class="list2">
+      <div class="table-row7" *ngFor="let item of analysesListContent" (dblclick)="selectAnalysis(item.id)">
+        <div class="placeholder21">
+          <b class="text86">{{item.type}}</b>
+        </div>
+        <div class="placeholder22">
+          <div class="text87">{{item.patient_name}}</div>
+        </div>
+        <div class="placeholder23">
+          <div class="text87">{{item.date}}</div>
+        </div>
+      </div>
+    </div>
+
+    <button (click)="addAnalysis()" class="add-button-pos">
+      <img class="add-square-icon" alt="" src="assets/img/add-square.svg" />
+      <div class="search26">Add</div>
+    </button>
+  </div>
