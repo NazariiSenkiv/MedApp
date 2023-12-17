@@ -58,7 +58,7 @@ export class AddAnalysesComponent {
         const year = currentDate.getFullYear()
 
         return `${day}.${month}.${year}`
-      }
+    }
 
     protected toNextPage() {
         let date_str: string = this.getCurrentDateString()

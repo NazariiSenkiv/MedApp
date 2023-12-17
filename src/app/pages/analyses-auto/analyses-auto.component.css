@@ -892,6 +892,12 @@
     flex-direction: row;
     align-items: center;
   }
+  .table-row:hover {
+    background-color: var(--gray-6);
+  }
+  .selected-row, .selected-row:hover {
+    background-color: var(--gray-5);
+  }
   .search-bar13 {
     cursor: pointer;
     border: 0;
@@ -907,7 +913,6 @@
   }
   .table-row {
     align-self: stretch;
-    background-color: var(--white);
     border-bottom: 1px solid var(--gray-5);
     justify-content: center;
   }

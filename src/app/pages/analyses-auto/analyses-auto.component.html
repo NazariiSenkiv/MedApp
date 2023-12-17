@@ -13,6 +13,9 @@
         </button>
     </div>
 
+    <!-- loading pop-up -->
+    <app-loading-popup *ngIf="isLoading"></app-loading-popup>
+
     <div class="body">
         <div class="container">
             <div class="row justify-content-end">
@@ -26,7 +29,7 @@
                 </button>
             </div>
             <div class="row justify-content-end">
-                <button class="done-button">
+                <button class="done-button" (click)="readCurrentProviderData()">
                     <img
                     class="add-square-icon"
                     alt=""
@@ -38,26 +41,28 @@
         </div>
 
         <div class="row">
+            <!-- Patient name -->
             <div class="input20">
                 <div class="base22">
-                <div class="container40">
-                    <input disabled class="form-field22" type="text" [(ngModel)]="userName"/>
-    
-                    <img
-                    class="icon-outside22"
-                    alt=""
-                    src="assets/img/icon-outside.svg"
-                    />
-    
-                    <label class="label35">
-                    <div class="text68">Name</div>
-                    </label>
-                </div>
-                <div class="hint-error22">
-                    <div class="text68">Hint or Error Message</div>
-                </div>
+                    <div class="container40">
+                        <input disabled class="form-field22" type="text" [(ngModel)]="userName"/>
+        
+                        <img
+                            class="icon-outside22"
+                            alt=""
+                            src="assets/img/icon-outside.svg"
+                        />
+        
+                        <label class="label35">
+                        <div class="text68">Name</div>
+                        </label>
+                    </div>
+                    <div class="hint-error22">
+                        <div class="text68">Hint or Error Message</div>
+                    </div>
                 </div>
             </div>
+            <!-- Date -->
             <div class="input20">
                 <div class="base22">
                 <div class="container40">
@@ -124,15 +129,18 @@
         </div>
 
         <section class="list1">
-            <div *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]" class="table-row">
+            <div 
+                *ngFor="let provider of supportedDataProviders" 
+                (click)="setCurrentProvider(provider.id)" 
+                [class]="provider.id == currentProviderId ? 'table-row selected-row' : 'table-row'">
               <div class="placeholder">
-                <b class="text31">Blood pressure sensor</b>
+                <b class="text31">{{provider.name}}</b>
               </div>
               <div class="placeholder1">
-                <div class="text32">Sensor</div>
+                <div class="text32">{{provider.type}}</div>
               </div>
               <div class="placeholder2">
-                <div class="text32">Online</div>
+                <div class="text32">{{provider.status}}</div>
               </div>
               <button class="search-bar13">
                 <img
