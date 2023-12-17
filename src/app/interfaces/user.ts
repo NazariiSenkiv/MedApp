@@ -3,6 +3,7 @@ export interface UserModel {
     name: string,
     surname: string,
     userRoleId: number
+    iconURL: string
 }
 
 export interface LoginData {

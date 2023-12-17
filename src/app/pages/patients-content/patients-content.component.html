@@ -26,15 +26,12 @@
       </div>
     </div>
     <div class="list">
-      <div class="patient">
+      <div *ngFor="let patient of patients" class="patient">
         <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-1@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
+          <object class="container-child" [data]="transform(patient.iconURL)" type="image/png">
+            <img class="container-child" src="assets/img/profile-button.svg" alt="">
+          </object>
+          <b class="john-doe">{{patient.name + ' ' + patient.surname}}</b>
         </div>
         <div class="container1">
           <button class="button1">
@@ -45,7 +42,7 @@
           </button>
         </div>
       </div>
-      <div class="patient">
+      <!-- <div class="patient">
         <div class="container1">
           <img
             class="container-child"
@@ -196,6 +193,6 @@
             <img class="patient-icon" alt="" src="assets/img/person1.svg" />
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 </div>
