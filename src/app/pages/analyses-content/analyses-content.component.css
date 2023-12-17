@@ -216,7 +216,6 @@
     border-radius: var(--br-5xs);
     overflow: hidden;
     align-items: center;
-    margin-left: -10px;
   }
   .frame-div {
     align-items: flex-start;
