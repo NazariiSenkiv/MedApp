@@ -1,17 +1,26 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CurrentUserService } from '../../services/current-user.service';
+import { UserModel } from '../../interfaces/user';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
   protected currentOption: string = ""
+  protected isDoctor: boolean = false
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute, protected currentUserService: CurrentUserService) 
+  {
+    this.route.queryParams.subscribe(params => {
+      this.isDoctor = this.currentUserService.isDoctor()
+    })
+  }
 
   protected handleClicked(option: string) {
     this.currentOption = option

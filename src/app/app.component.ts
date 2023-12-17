@@ -7,6 +7,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AnalysesService } from './services/analyses.service';
 import { UsersService } from './services/users.service';
+import { CurrentUserService } from './services/current-user.service';
 
 @Component({
     selector: 'app-root',
@@ -14,7 +15,7 @@ import { UsersService } from './services/users.service';
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     imports: [CommonModule, RouterOutlet, MainComponent, LoginComponent, HeaderComponent, HttpClientModule],
-    providers: [AnalysesService, UsersService]
+    providers: [AnalysesService, UsersService, CurrentUserService]
 })
 export class AppComponent {
   title = 'MedApp';

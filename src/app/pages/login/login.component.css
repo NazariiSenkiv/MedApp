@@ -148,3 +148,19 @@
     right: 10px;
     top: 50%;
 }
+
+.hint-error22 {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.hint-error22 {
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-9xs);
+  font-size: var(--font-size-smi);
+  color: var(--error-red);
+}
+
+.text68 {
+  position: relative;
+  line-height: 135%;
+}

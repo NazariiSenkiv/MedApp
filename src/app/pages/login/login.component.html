@@ -6,17 +6,27 @@
     <div class="dialog">
       <h1 class="login1">Login</h1>
       <div class="input">
-        <div class="label">Username</div>
-        <input class="field" type="text" />
+        <div class="input">
+          <div class="label">Username</div>
+          <input class="field" type="text" [(ngModel)]="loginString" />
+        </div>
+        <div class="hint-error22">
+          <div class="text68">{{loginErrorString}}</div>
+        </div>
       </div>
       <div class="input">
-        <div class="label">Password</div>
-        <input class="field1" type="password" [type]="showPassword ? 'text' : 'password'" />
-        <div class="toggle-password">
-            <img 
-                (click)="showPassword=!showPassword"
-                [src]="showPassword ? 'assets/img/eye-off.svg' : 'assets/img/eye.svg'"
-            />
+        <div class="input">
+          <div class="label">Password</div>
+          <input class="field1" type="password" [type]="showPassword ? 'text' : 'password'" [(ngModel)]="passwordString" />
+          <div class="toggle-password">
+              <img 
+                  (click)="showPassword=!showPassword"
+                  [src]="showPassword ? 'assets/img/eye-off.svg' : 'assets/img/eye.svg'"
+              />
+          </div>
+        </div>
+        <div class="hint-error22">
+          <div class="text68">{{passwordErrorString}}</div>
         </div>
       </div>
       <button (click)="login()" class="action">
