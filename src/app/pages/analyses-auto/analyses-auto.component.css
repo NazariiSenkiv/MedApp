@@ -411,6 +411,13 @@
     mix-blend-mode: normal;
 }
 
+.done-button:hover {
+  background-color: var(--primary-btn-hover);
+}
+.done-button:active {
+  background-color: var(--primary-btn-clicked);
+}
+
 .frame-div,
   .search-bar27 {
     align-self: stretch;
@@ -911,6 +918,14 @@
     box-sizing: border-box;
     gap: var(--gap-5xs);
   }
+
+  .search-bar13:hover {
+    background-color: var(--primary-btn-hover);
+  }
+  .search-bar13:active {
+    background-color: var(--primary-btn-clicked);
+  }
+
   .table-row {
     align-self: stretch;
     border-bottom: 1px solid var(--gray-5);

@@ -356,6 +356,14 @@
     right: 2vw;
     bottom: 5vh;
 }
+
+.add-button-pos:hover {
+  background-color: var(--primary-btn-hover);
+}
+
+.add-button-pos:active {
+  background-color: var(--primary-btn-clicked);
+}
   .analyses6,
   .content8 {
     position: relative;

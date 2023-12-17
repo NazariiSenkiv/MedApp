@@ -109,6 +109,14 @@
   justify-content: center;
   box-sizing: border-box;
 }
+
+.action:hover {
+  background-color: var(--primary-btn-hover);
+}
+.action:active {
+  background-color: var(--primary-btn-clicked);
+}
+
 .dialog,
 .login {
   flex-direction: column;
