@@ -397,6 +397,14 @@
     gap: var(--gap-5xs);
   }
 
+  .action-button:hover{
+    background-color: var(--grey-lii);
+  }
+  .action-button:active{
+    background-color: var(--grey-li);
+  }
+
+
 .done-button {
     right: 0px;
     cursor: pointer;
