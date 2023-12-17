@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { DoCheck } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { CommonModule, NgIf, NgFor, Location } from '@angular/common';
 import { CustomPipesModule } from '../../pipes/custom-pipes/custom-pipes.module'
-import { FormControl, FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { AnalysisType, AnalysisTypeField } from '../../interfaces/analysis-type'
 import { Analysis, AnalysisFieldResult } from '../../interfaces/analysis'
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,7 +19,7 @@ import { UsersService } from '../../services/users.service';
     styleUrl: './analyses.component.css',
     imports: [CustomPipesModule, HeaderComponent, NgIf, NgFor, CommonModule, FormsModule],
 })
-export class AnalysesComponent {
+export class AnalysesComponent implements DoCheck {
     protected mode: string = "existing"
     protected editMode: boolean = false
 
@@ -31,7 +32,12 @@ export class AnalysesComponent {
 
     protected analysisId: number = -1;
 
-    constructor(private location: Location, private route: ActivatedRoute, protected analysesService: AnalysesService, protected userService: UsersService) {
+    @ViewChild('formResult') formResult!: NgForm;
+
+    // error handling
+    protected errors: {errorFieldTag: string, errorMessage: string}[] = []
+
+    constructor(private router: Router, private location: Location, private route: ActivatedRoute, protected analysesService: AnalysesService, protected userService: UsersService) {
         analysesService.getAnalysesTypes().subscribe({
             next: (analysesTypes: AnalysisType[]) => {
                 this.analysesTypeNames = analysesTypes.map(type => type.name)
@@ -108,6 +114,49 @@ export class AnalysesComponent {
         });
     }
 
+    ngDoCheck(): void {
+        if (this.formResult) {
+            let analysis = this.readAnalysisFromForm(this.formResult)
+            this.validateAnalysisFields(analysis, this.analysesType, true)
+        }
+    }
+
+    protected hasErrors(): boolean {
+        return this.errors.length > 0
+    }
+    protected hasError(fieldTag: string): boolean {
+        return this.errors.find(el => el.errorFieldTag == fieldTag) != undefined
+    }
+    protected getErrorMessage(fieldTag: string): string {
+        return this.errors.find(el => el.errorFieldTag == fieldTag)!.errorMessage
+    }
+    // updates errors array
+    protected validateAnalysisFields(analysis: Analysis, analysisType: AnalysisType, checkEmpty: boolean = false) {
+        this.errors = []
+
+        analysis.results.forEach(obj => {
+            let field = analysisType.fields.find(field => field.tag == obj.name)
+
+            if (field && field.min && field.max) {
+                if (checkEmpty) {
+                    console.log("obj.value = ")
+                    console.log(obj.value)
+                    if (obj.value == undefined || obj.value == "") {
+                        this.errors.push({errorFieldTag: field.tag, errorMessage: `${field.name} - invalid value`})
+                        console.log({errorFieldTag: field.tag, errorMessage: `${field.name} - invalid value`})
+                    }
+                }
+                // check range
+                if (obj.value < field.min || obj.value > field.max) {
+                    this.errors.push({errorFieldTag: field.tag, errorMessage: `${field.name} should be in range [${field.min}; ${field.max}]`})
+                }
+            } else {
+                throw Error("[MedApp]: Can't find Corresponding field")
+            }
+        })
+    }
+
+
     private readAnalysisFromForm(formResult: any): Analysis {
         let formFields = Object.keys(formResult.controls).map(key => ({name: key, value: formResult.controls[key].value}))
         
@@ -126,10 +175,15 @@ export class AnalysesComponent {
         }
     }
 
-    protected saveChanges(formResult: any) {
+    protected saveChanges(formResult: any) { 
         // convert form data to analysis
         let analysis = this.readAnalysisFromForm(formResult)
-        
+
+        this.validateAnalysisFields(analysis, this.analysesType, true)
+
+        if (this.hasErrors())
+            return
+
         console.log(analysis)
         
         if (this.mode == "new")
@@ -143,20 +197,30 @@ export class AnalysesComponent {
             this.analysesService.updateAnalysis(this.analysisId, analysis).subscribe()
         }
         
+        this.analysis = analysis
         this.editMode = false
         this.mode = "existing"
     }
 
     protected back() {
-        this.editMode = false
-
         if (this.mode == "new") {
             this.location.back()
+        } else {
+            //this.router.navigate(['/analyses'], {queryParams: {mode: "existing", id: this.analysisId}});
+            this.location.replaceState(this.location.path());
+            window.location.reload();
         }
+        //this.editMode = false
     }
 
     protected getFieldValue(fieldName: string): string | undefined {
-        const field = this.analysis.results.find(field => field.name == fieldName);
-        return field?.value;
+        if (this.mode != "new") {
+            let field = this.analysis.results.find(field => field.name == fieldName);
+            return field?.value;
+        } 
+        else {
+            let field = this.analysesType.fields.find(field => field.tag == fieldName);
+            return field?.min as any as string;
+        }
       }
 }

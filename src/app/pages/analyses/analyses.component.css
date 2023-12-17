@@ -160,10 +160,10 @@
     justify-content: flex-start;
   }
   .hint-error22 {
-    display: none;
     flex-direction: row;
     padding: 0 0 0 var(--padding-9xs);
     font-size: var(--font-size-smi);
+    color: var(--error-red);
   }
   .base22,
   .input20,
@@ -421,4 +421,8 @@
     color: var(--gray-6);
     text-align: left;
     mix-blend-mode: normal;
+}
+
+.done-button:disabled {
+  background-color: var(--blue-1-dis);;
 }
