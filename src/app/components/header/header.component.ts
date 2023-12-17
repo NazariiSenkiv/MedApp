@@ -14,4 +14,8 @@ export class HeaderComponent {
   navigateToHome(): void {
     this.router.navigate(['/main']);
   }
+
+  protected exitToLogin() {
+    this.router.navigate(['/']);
+  }
 }

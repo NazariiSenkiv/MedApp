@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <button (click)="addAnalysis()" class="add-button-pos">
+    <button *ngIf="currentUserService.isDoctor()" (click)="addAnalysis()" class="add-button-pos">
       <img class="add-square-icon" alt="" src="assets/img/add-square.svg" />
       <div class="search26">Add</div>
     </button>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { NgModel, FormsModule } from '@angular/forms';
 import { AnalysisShortInfo } from '../../interfaces/analysis';
 import { CustomPipesModule } from '../../pipes/custom-pipes/custom-pipes.module';
@@ -12,7 +12,7 @@ import { CurrentUserService } from '../../services/current-user.service';
 @Component({
   selector: 'app-analyses-content',
   standalone: true,
-  imports: [NgFor, CustomPipesModule, FormsModule],
+  imports: [NgFor, CustomPipesModule, FormsModule, NgIf],
   templateUrl: './analyses-content.component.html',
   styleUrl: './analyses-content.component.scss'
 })
@@ -22,7 +22,7 @@ export class AnalysesContentComponent {
 
   protected searchPatientName: string = ""
 
-  constructor(private router: Router, private analysisService: AnalysesService, private currentUserService: CurrentUserService) {
+  constructor(private router: Router, private analysisService: AnalysesService, protected currentUserService: CurrentUserService) {
     let currentUserId = currentUserService.getCurrentUserId()
 
     this.analysisService.getAnalysesShortInfos(currentUserId).subscribe({
