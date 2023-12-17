@@ -4,16 +4,19 @@ import { UserModel } from '../../interfaces/user';
 import { UsersService } from '../../services/users.service';
 import { CurrentUserService } from '../../services/current-user.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { CustomPipesModule } from '../../pipes/custom-pipes/custom-pipes.module';
 
 @Component({
   selector: 'app-patients-content',
   standalone: true,
-  imports: [NgFor, CommonModule],
+  imports: [NgFor, CommonModule, FormsModule, CustomPipesModule],
   templateUrl: './patients-content.component.html',
   styleUrl: './patients-content.component.scss'
 })
 export class PatientsContentComponent {
   protected patients: UserModel[] = []
+  protected searchFullname: string = ""
 
   protected safe: SafeResourceUrl | null = null
 

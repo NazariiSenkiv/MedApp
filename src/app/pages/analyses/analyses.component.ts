@@ -137,11 +137,11 @@ export class AnalysesComponent implements DoCheck {
         analysis.results.forEach(obj => {
             let field = analysisType.fields.find(field => field.tag == obj.name)
 
-            if (field && field.min && field.max) {
+            if (field && field.min !== undefined && field.max !== undefined) {
                 if (checkEmpty) {
                     console.log("obj.value = ")
                     console.log(obj.value)
-                    if (obj.value == undefined || obj.value == "") {
+                    if (obj.value === undefined || obj.value === "") {
                         this.errors.push({errorFieldTag: field.tag, errorMessage: `${field.name} - invalid value`})
                         console.log({errorFieldTag: field.tag, errorMessage: `${field.name} - invalid value`})
                     }
@@ -151,7 +151,7 @@ export class AnalysesComponent implements DoCheck {
                     this.errors.push({errorFieldTag: field.tag, errorMessage: `${field.name} should be in range [${field.min}; ${field.max}]`})
                 }
             } else {
-                throw Error("[MedApp]: Can't find Corresponding field")
+                throw Error("[MedApp]: Can't find Corresponding field" + field)
             }
         })
     }

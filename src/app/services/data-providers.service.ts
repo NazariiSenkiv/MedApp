@@ -10,13 +10,13 @@ export class DataProvidersService {
   protected dataProviders: DataProvider[] = [
     {id: 0, name: "Blood sensor",    type: "Sensor",           status: "Online", supported_analyses_types: [1]},
     {id: 1, name: "Oxygen sensor",   type: "Sensor",           status: "Online", supported_analyses_types: [3]},
-    {id: 2, name: "Sensor 156",      type: "Sensor",           status: "Online", supported_analyses_types: [1, 3, 4]},
-    {id: 3, name: "Alpha-125",       type: "Sensor",           status: "Online", supported_analyses_types: [1, 3, 4]},
-    {id: 4, name: "Laboratory 4",    type: "External system",  status: "Online", supported_analyses_types: [1, 3, 4]},
+    {id: 2, name: "Sensor 156",      type: "Sensor",           status: "Online", supported_analyses_types: [1, 3, 4, 5, 6]},
+    {id: 3, name: "Alpha-125",       type: "Sensor",           status: "Online", supported_analyses_types: [1, 3, 4, 6]},
+    {id: 4, name: "Laboratory 4",    type: "External system",  status: "Online", supported_analyses_types: [1, 3, 4, 5]},
     {id: 5, name: "Alpha-490",       type: "Sensor",           status: "Online", supported_analyses_types: [1, 4]},
-    {id: 6, name: "Laboratory",      type: "External system",  status: "Online", supported_analyses_types: [1, 3]},
-    {id: 7, name: "Quick analyses",  type: "External system",  status: "Online", supported_analyses_types: [4]},
-    {id: 8, name: "Medical+",        type: "External system",  status: "Online", supported_analyses_types: [1, 3, 4]},
+    {id: 6, name: "Laboratory",      type: "External system",  status: "Online", supported_analyses_types: [1, 3, 5]},
+    {id: 7, name: "Quick analyses",  type: "External system",  status: "Online", supported_analyses_types: [4, 6]},
+    {id: 8, name: "Medical+",        type: "External system",  status: "Online", supported_analyses_types: [1, 3, 4, 5, 6]},
     {id: 9, name: "GS-3000",         type: "Sensor",           status: "Online", supported_analyses_types: [1, 3]}
   ]
 

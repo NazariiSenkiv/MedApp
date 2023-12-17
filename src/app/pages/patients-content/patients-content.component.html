@@ -5,7 +5,7 @@
         <img class="patient-icon" alt="" src="assets/img/iconsearch.svg" />
 
         <div class="search-wrapper">
-          <input class="search" type="text" placeholder="Patient name" />
+          <input class="search" type="text" placeholder="Patient name" [(ngModel)]="searchFullname" />
         </div>
       </div>
       <div class="search-bar-parent">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="list">
-      <div *ngFor="let patient of patients" class="patient">
+      <div *ngFor="let patient of patients | filterPatientsFullname: searchFullname" class="patient">
         <div class="container1">
           <object class="container-child" [data]="transform(patient.iconURL)" type="image/png">
             <img class="container-child" src="assets/img/profile-button.svg" alt="">
@@ -42,157 +42,5 @@
           </button>
         </div>
       </div>
-      <!-- <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-11@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-12@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-13@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-14@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-15@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-16@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-15@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="patient">
-        <div class="container1">
-          <img
-            class="container-child"
-            alt=""
-            src="assets/img/ellipse-16@2x.png"
-          />
-
-          <b class="john-doe">John Doe</b>
-        </div>
-        <div class="container1">
-          <button class="button1">
-            <div class="label4">View card</div>
-          </button>
-          <div class="round-button1">
-            <img class="patient-icon" alt="" src="assets/img/person1.svg" />
-          </div>
-        </div>
-      </div> -->
     </div>
 </div>
