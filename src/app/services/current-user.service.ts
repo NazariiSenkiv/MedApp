@@ -1,19 +1,46 @@
 import { Injectable } from '@angular/core';
+import { LoginData, UserModel } from '../interfaces/user';
+import { Observable, tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { API_BASE_URL } from '../api.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrentUserService {
 
-  constructor() { }
+  private loginEndpoint = `${API_BASE_URL}/Login`;
 
-  public getCurrentUserId(): number {
-    // TODO: implement
-    return 6
+  private currentUser: UserModel | null = null;
+
+  private localStorageKey = 'currentUser';
+
+  constructor(private http: HttpClient) 
+  {
+    const storedUser = localStorage.getItem(this.localStorageKey);
+    if (storedUser) {
+      this.currentUser = JSON.parse(storedUser);
+    }
   }
 
-  public getCurrentUserName(): string {
-    // TODO: implement
-    return "John Doe"
+  public getCurrentUser(): UserModel | null {
+    return this.currentUser;
+  }
+
+  public getCurrentUserId(): number {
+    return this.currentUser ? this.currentUser.id : -1;
+  }
+
+  public getCurrentUserName(): string | null {
+    return this.currentUser ? this.currentUser.name : null;
+  }
+
+  public loginCurrentUser(loginData: LoginData): Observable<UserModel> {
+    return this.http.post<UserModel>(`${this.loginEndpoint}`, loginData).pipe(
+      tap(user => {
+        this.currentUser = user;
+        localStorage.setItem(this.localStorageKey, JSON.stringify(user));
+      })
+    );
   }
 }
