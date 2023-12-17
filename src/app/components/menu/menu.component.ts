@@ -19,6 +19,9 @@ export class MenuComponent {
   {
     this.route.queryParams.subscribe(params => {
       this.isDoctor = this.currentUserService.isDoctor()
+
+      let subpageUrl = this.router.url.replace("/main/", "")
+      this.currentOption = subpageUrl
     })
   }
 
