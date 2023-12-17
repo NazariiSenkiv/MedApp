@@ -13,15 +13,13 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeContentComponent {
   protected userName: string = ''
 
-  protected doctorId: number = 2
-
   constructor(private route: ActivatedRoute, protected currentUserService: CurrentUserService) 
   {
     this.route.queryParams.subscribe(params => {
       let currentUser: UserModel | null = this.currentUserService.getCurrentUser()
     
-    let prefix = (currentUser?.userRoleId === this.doctorId) ? 'dr.' : ''
-    this.userName = prefix + currentUser?.name
+      let prefix = currentUserService.isDoctor() ? 'dr.' : ''
+      this.userName = prefix + currentUser?.name
     })
   }
 }

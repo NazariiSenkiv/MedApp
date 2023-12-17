@@ -15,12 +15,18 @@ export class CurrentUserService {
 
   private localStorageKey = 'currentUser';
 
+  protected doctorId: number = 2
+
   constructor(private http: HttpClient) 
   {
     const storedUser = localStorage.getItem(this.localStorageKey);
     if (storedUser) {
       this.currentUser = JSON.parse(storedUser);
     }
+  }
+
+  public isDoctor(): boolean {
+    return this.currentUser?.userRoleId == this.doctorId;
   }
 
   public getCurrentUser(): UserModel | null {
