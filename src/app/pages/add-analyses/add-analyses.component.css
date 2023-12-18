@@ -138,6 +138,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin: 3%;
+    min-width: 200px;
   }
   .base {
     align-self: stretch;
