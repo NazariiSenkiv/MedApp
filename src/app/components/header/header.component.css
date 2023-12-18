@@ -23,7 +23,7 @@
     height: 6.5vh;
     overflow: hidden;
     flex-shrink: 0;
-    margin: 0 auto;
+    margin: 0 0 auto 0;
     display: block;
 }
 
