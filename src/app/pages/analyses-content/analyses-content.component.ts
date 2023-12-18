@@ -4,6 +4,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { NgModel, FormsModule } from '@angular/forms';
 import { AnalysisShortInfo } from '../../interfaces/analysis';
 import { CustomPipesModule } from '../../pipes/custom-pipes/custom-pipes.module';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 
 import { AnalysesService } from '../../services/analyses.service';
@@ -22,7 +23,9 @@ export class AnalysesContentComponent {
 
   protected searchPatientName: string = ""
 
-  constructor(private router: Router, private analysisService: AnalysesService, protected currentUserService: CurrentUserService) {
+  protected shouldCollapse: boolean = false
+
+  constructor(private router: Router, private analysisService: AnalysesService, protected currentUserService: CurrentUserService, private breakpointService: BreakpointObserver) {
     let currentUserId = currentUserService.getCurrentUserId()
 
     this.analysisService.getAnalysesShortInfos(currentUserId).subscribe({
@@ -32,6 +35,16 @@ export class AnalysesContentComponent {
       },
       error: (e) => console.error(e),
     })
+
+    breakpointService
+      .observe([Breakpoints.Small, Breakpoints.XSmall])
+      .subscribe(result => {
+        this.shouldCollapse = false
+
+        if (result.matches) {
+          this.shouldCollapse = true
+        }
+      })
   }
 
   protected addAnalysis() {
