@@ -1,0 +1,12 @@
+.analyses8 {
+    align-self: stretch;
+    position: relative;
+}
+.analyses8 {
+    margin: 0;
+    align-self: stretch;
+    position: relative;
+    font-size: var(--header-1-size);
+    font-weight: 700;
+    font-family: inherit;
+}

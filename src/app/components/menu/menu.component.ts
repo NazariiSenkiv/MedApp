@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CurrentUserService } from '../../services/current-user.service';
 import { UserModel } from '../../interfaces/user';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -15,8 +16,20 @@ export class MenuComponent {
   protected currentOption: string = ""
   protected isDoctor: boolean = false
 
-  constructor(private router: Router, private route: ActivatedRoute, protected currentUserService: CurrentUserService) 
+  protected hideButtonsText: boolean = false
+
+  constructor(private router: Router, private route: ActivatedRoute, protected currentUserService: CurrentUserService, private breakpointService: BreakpointObserver) 
   {
+    this.breakpointService
+      .observe([Breakpoints.Small, Breakpoints.XSmall])
+      .subscribe(result => {
+        this.hideButtonsText = false
+
+        if (result.matches) {
+          this.hideButtonsText = true
+        }
+      })
+
     this.route.queryParams.subscribe(params => {
       this.isDoctor = this.currentUserService.isDoctor()
 
