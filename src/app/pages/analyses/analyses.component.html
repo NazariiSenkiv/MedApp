@@ -15,6 +15,16 @@
 
     <form class="body" #formResult="ngForm" (ngSubmit)="saveChanges(formResult)">
         <div *ngIf="!editMode" class="container">
+            <div class="row">
+                <button (click)="toMain()" class="action-button">
+                    <img
+                    class="add-square-icon"
+                    alt=""
+                    src="assets/img/arrow-left.svg"
+                    />
+                    <div class="search24">Back</div>
+                </button>
+            </div>
             <div class="frame-div"></div>
             <div class="row justify-content-end">
                 <div class="search-bar-parent1">

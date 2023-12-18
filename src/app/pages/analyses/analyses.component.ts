@@ -202,6 +202,10 @@ export class AnalysesComponent implements DoCheck {
         this.mode = "existing"
     }
 
+    protected toMain() {
+        this.router.navigate(['/main/analyses'])
+    }
+
     protected back() {
         if (this.mode == "new") {
             this.location.back()
