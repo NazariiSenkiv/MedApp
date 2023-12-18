@@ -17,9 +17,12 @@
     height: 91.7vh;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--padding-5xs) var(--padding-base) var(--padding-9xs);
+    padding: var(--padding-5xs) 2.1vw var(--padding-9xs);
   }
   
+  .menu-min-width {
+    min-width: 50px;
+  }
   
   .content1 {
     flex: 1;

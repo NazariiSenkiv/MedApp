@@ -13,16 +13,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 var(--padding-base) 0 var(--padding-21xl);
+    padding: 0 var(--padding-base) 0 0;
     box-sizing: border-box;
 }
 
 .briefcase-medical-icon1 {
     position: relative;
-    width: 56px;
-    height: 56px;
+    width: 6.5vh;
+    height: 6.5vh;
     overflow: hidden;
     flex-shrink: 0;
+    margin: 0 auto;
+    display: block;
 }
 
 .profile-menu1 {
@@ -101,4 +103,12 @@
 
 .button-cursor {
     cursor: pointer;
+}
+
+.icon-container {
+    align-content: center;
+    justify-content: center;
+    width: 12.6%;
+    padding: 0 2.1vw;
+    min-width: 50px;
 }
