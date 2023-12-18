@@ -7,6 +7,7 @@ import { FormControl, FormsModule, FormBuilder, FormGroup, NgForm } from '@angul
 import { AnalysisType, AnalysisTypeField } from '../../interfaces/analysis-type'
 import { Analysis, AnalysisFieldResult } from '../../interfaces/analysis'
 import { ActivatedRoute, Router } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import { AnalysesService } from '../../services/analyses.service';
 import { UsersService } from '../../services/users.service';
@@ -23,6 +24,8 @@ export class AnalysesComponent implements DoCheck {
     protected mode: string = "existing"
     protected editMode: boolean = false
 
+    protected shouldCollapse: boolean = false
+
     protected userName!: string
 
     protected analysesTypeNames!: string[]
@@ -37,13 +40,23 @@ export class AnalysesComponent implements DoCheck {
     // error handling
     protected errors: {errorFieldTag: string, errorMessage: string}[] = []
 
-    constructor(private router: Router, private location: Location, private route: ActivatedRoute, protected analysesService: AnalysesService, protected userService: UsersService) {
+    constructor(private router: Router, private location: Location, private route: ActivatedRoute, protected analysesService: AnalysesService, protected userService: UsersService, private breakpointService: BreakpointObserver) {
         analysesService.getAnalysesTypes().subscribe({
             next: (analysesTypes: AnalysisType[]) => {
                 this.analysesTypeNames = analysesTypes.map(type => type.name)
             },
             error: (e) => console.error(e),
-        }) 
+        })
+
+        breakpointService
+            .observe([Breakpoints.Small, Breakpoints.XSmall])
+            .subscribe(result => {
+                this.shouldCollapse = false
+
+                if (result.matches) {
+                    this.shouldCollapse = true
+                }
+            })
 
         this.route.queryParams.subscribe(params => {
             this.mode = params['mode']

@@ -13,7 +13,7 @@
         </button>
     </div>
 
-    <form class="body" #formResult="ngForm" (ngSubmit)="saveChanges(formResult)">
+    <form [class]="shouldCollapse ? 'body wider': 'body'" #formResult="ngForm" (ngSubmit)="saveChanges(formResult)">
         <div *ngIf="!editMode" class="container">
             <div class="row">
                 <button (click)="toMain()" class="action-button">
@@ -72,8 +72,8 @@
 
         <div class="fields-container">
             <!-- Name and date -->
-            <div class="row">
-                <div class="input20">
+            <div [class]="shouldCollapse ? 'col m5-top': 'row'">
+                <div [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
                     <div class="base22">
                         <div class="container40">
                         <input disabled name="patient_name" 
@@ -92,7 +92,7 @@
                     </div>
                     </div>
                 </div>
-                <div class="input20">
+                <div [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
                     <div class="base22">
                     <div class="container40">
                         <input disabled name="date" 
@@ -114,8 +114,8 @@
             </div>
 
             <!-- Analysis type -->
-            <div class="row">
-                <div class="dropdown4">
+            <div [class]="shouldCollapse ? 'col': 'row'">
+                <div [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
                     <div class="base22">
                         <div class="container40">
                             <select name="analyses-type" disabled [class]="editMode ? 'form-field30 custom-disable' : 'form-field30'" 
@@ -140,8 +140,8 @@
                 </div>
             </div>
 
-            <div *ngFor="let fields_pair of analysesType.fields | chunk: 2" class="row">
-                <div *ngIf="fields_pair[0]" class="input20">
+            <div *ngFor="let fields_pair of analysesType.fields | chunk: 2" [class]="shouldCollapse ? 'col': 'row'">
+                <div *ngIf="fields_pair[0]" [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
                     <div class="base22">
                         <div class="container40">
                             <input 
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                 </div>
-                <div *ngIf="fields_pair[1]" class="input20">
+                <div *ngIf="fields_pair[1]" [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
                     <div class="base22">
                         <div class="container40">
                             <input 
