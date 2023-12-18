@@ -272,6 +272,14 @@
     justify-content: flex-start;
     padding: var(--padding-base) var(--padding-13xl);
   }
+  .placeholder21-column {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1vh var(--padding-13xl);
+  }
   .text87 {
     position: relative;
     font-weight: 300;
