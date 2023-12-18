@@ -126,7 +126,8 @@
   background-color: var(--white);
   border: 2px solid var(--blue-1);
   box-sizing: border-box;
-  width: 465px;
+  width: 45vw;
+  min-width: 300px;
   justify-content: flex-start;
   padding: var(--padding-13xl);
   gap: var(--gap-base);
