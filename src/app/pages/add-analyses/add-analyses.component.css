@@ -1,4 +1,4 @@
-.search-bar25 {
++.search-bar25 {
     cursor: pointer;
     border: 0;
     padding: var(--padding-5xs);
@@ -232,6 +232,9 @@
   padding: 3vh;
 }
 
+.form-field {
+  padding-left: 10px;
+}
 .container {
   gap: var(--gap-base);
   width: 70vw;
