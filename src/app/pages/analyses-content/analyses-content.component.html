@@ -23,38 +23,38 @@
       <div class="search-bar-parent1">
         <button class="search-bar28">
           <img
-            class="add-square-icon"
+            [class]="shouldCollapse ? 'add-square-icon centralized' : 'add-square-icon'"
             alt=""
             src="assets/img/filter1.svg"
           />
 
-          <div class="search24">Filter</div>
+          <div *ngIf="!shouldCollapse" class="search24">Filter</div>
         </button>
-        <button class="search-bar28">
+        <button [class]="shouldCollapse ? 'search-bar28 centralized' : 'search-bar28'">
           <img
-            class="add-square-icon"
+            [class]="shouldCollapse ? 'add-square-icon centralized' : 'add-square-icon'"
             alt=""
             src="assets/img/arrow-sort-down-lines1.svg"
           />
 
-          <div class="search24">Sort</div>
+          <div *ngIf="!shouldCollapse"class="search24">Sort</div>
         </button>
       </div>
     </div>
     <div class="list2">
       <div 
-        [class]="shouldCollapse ? 'table-row7-column' : 'table-row7'"
+        [class]="shouldCollapse ? 'table-row7' : 'table-row7'"
         *ngFor="let item of analysesListContent | filterFullname: searchPatientName" 
         (click)="selectAnalysis(item.id)"
         >
         <div [class]="shouldCollapse ? 'placeholder21-column' : 'placeholder21'">
-          <b class="text86">{{item.type}}</b>
+          <b class="text86" [class]="shouldCollapse ? 'scaled' : ''">{{item.type}}</b>
         </div>
         <div [class]="shouldCollapse ? 'placeholder21-column' : 'placeholder21'">
-          <div class="text87">{{item.patient_name + ' ' + item.patient_surname}}</div>
+          <div class="text87" [class]="shouldCollapse ? 'scaled' : ''">{{item.patient_name + ' ' + item.patient_surname}}</div>
         </div>
         <div [class]="shouldCollapse ? 'placeholder21-column' : 'placeholder21'">
-          <div class="text87">{{item.date}}</div>
+          <div class="text87" [class]="shouldCollapse ? 'scaled' : ''">{{item.date}}</div>
         </div>
       </div>
     </div>

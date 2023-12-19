@@ -63,3 +63,7 @@
   height: 24px;
   filter: invert(61%) sepia(26%) saturate(5525%) hue-rotate(173deg) brightness(92%) contrast(85%);
 }
+
+.centralized {
+  margin: 0 auto;
+}

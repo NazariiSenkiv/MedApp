@@ -375,3 +375,6 @@
     font-family: var(--link);
   }
   
+  .centralized {
+    margin: 0 auto;
+  }

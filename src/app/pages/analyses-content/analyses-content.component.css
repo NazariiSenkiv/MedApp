@@ -184,7 +184,8 @@
   .search-bar26 {
     border-radius: var(--br-5xs);
     background-color: var(--gray-6);
-    width: 420px;
+    width: 24vw;
+    min-width: 160px;
     overflow: hidden;
     flex-shrink: 0;
     align-items: center;
@@ -235,7 +236,8 @@
     padding: var(--padding-5xs);
     background-color: var(--gray-6);
     border-radius: var(--br-5xs);
-    width: 120px;
+    width: 8vw;
+    min-width: 40px;
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -278,7 +280,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 1vh var(--padding-13xl);
+    padding: 1vh 3vw;
   }
   .text87 {
     position: relative;
@@ -404,3 +406,10 @@
     font-family: var(--link);
   }
   
+  .centralized {
+    margin: 0 auto;
+  }
+
+  .scaled {
+    scale: 0.7;
+  }

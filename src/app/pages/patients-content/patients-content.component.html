@@ -10,13 +10,13 @@
       </div>
       <div class="search-bar-parent">
         <button class="search-bar1">
-          <img class="patient-icon" alt="" src="assets/img/filter.svg" />
+          <img [class]="shouldCollapse ? 'patient-icon centralized' : 'patient-icon'" alt="" src="assets/img/filter.svg" />
 
           <div *ngIf="!shouldCollapse" class="search1">Filter</div>
         </button>
         <button class="search-bar1">
           <img
-            class="patient-icon"
+            [class]="shouldCollapse ? 'patient-icon centralized' : 'patient-icon'"
             alt=""
             src="assets/img/arrow-sort-down-lines.svg"
           />
