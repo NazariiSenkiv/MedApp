@@ -16,7 +16,7 @@
 }
 
 .alert {
-    margin: 16px 0px;
+    margin: 1vh 2vw;
     border-radius: var(--br-9xs);
     background-color: var(--color-dodgerblue-100);
     display: flex;
