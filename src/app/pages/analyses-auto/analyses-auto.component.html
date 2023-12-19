@@ -96,9 +96,10 @@
 
                     <div class="search-container">
                         <input
-                        class="search22"
-                        type="text"
-                        placeholder="Patient name"
+                            class="search22"
+                            type="text"
+                            placeholder="Patient name"
+                            [(ngModel)]="searchString"
                         />
                     </div>
                 </div>
@@ -127,7 +128,7 @@
 
         <section class="list1">
             <div 
-                *ngFor="let provider of supportedDataProviders" 
+                *ngFor="let provider of supportedDataProviders | filterDataprovider: searchString" 
                 (click)="setCurrentProvider(provider.id)" 
                 [class]="provider.id == currentProviderId ? 'table-row selected-row' : 'table-row'"
             >

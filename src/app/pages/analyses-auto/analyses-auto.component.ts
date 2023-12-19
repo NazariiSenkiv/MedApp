@@ -14,13 +14,14 @@ import { AnalysesService } from '../../services/analyses.service';
 import { DataProvidersService } from '../../services/data-providers.service';
 import { AnalysisType } from '../../interfaces/analysis-type';
 import { LoadingPopupComponent } from "../../components/loading-popup/loading-popup.component";
+import { CustomPipesModule } from '../../pipes/custom-pipes/custom-pipes.module';
 
 @Component({
     selector: 'app-analyses-auto',
     standalone: true,
     templateUrl: './analyses-auto.component.html',
     styleUrl: './analyses-auto.component.scss',
-    imports: [HeaderComponent, NgFor, FormsModule, LoadingPopupComponent, NgIf]
+    imports: [HeaderComponent, NgFor, FormsModule, LoadingPopupComponent, NgIf, CustomPipesModule]
 })
 export class AnalysesAutoComponent {
     protected userName: string = "no-name"
@@ -38,6 +39,7 @@ export class AnalysesAutoComponent {
     private lastAnalysisId: number = -1
 
     protected shouldCollapse: boolean = false
+    searchString: string = ''
 
     constructor(
         private location: Location, 
