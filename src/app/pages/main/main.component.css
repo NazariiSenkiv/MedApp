@@ -27,7 +27,7 @@
   .content1 {
     flex: 1;
     flex-direction: column;
-    padding: var(--padding-13xl);
+    padding: 1.5vw; /*var(--padding-13xl);*/
     padding-bottom: 0px;
   }
   .body1,

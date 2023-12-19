@@ -186,7 +186,8 @@
   .search-bar {
     border-radius: var(--br-5xs);
     background-color: var(--gray-6);
-    width: 420px;
+    width: 24vw;
+    min-width: 160px;
     overflow: hidden;
     flex-shrink: 0;
     align-items: center;
@@ -209,7 +210,8 @@
     padding: var(--padding-5xs);
     background-color: var(--gray-6);
     border-radius: var(--br-5xs);
-    width: 120px;
+    width: 8vw;
+    min-width: 40px;
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -238,8 +240,10 @@
 
   .container-child {
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 6vw;
+    min-width: 40px;
+    height: 6vw;
+    min-height: 40px;
     object-fit: cover;
   }
   .container-child {
@@ -302,7 +306,7 @@
   }
   .patient {
     border-bottom: 1px solid var(--gray-5);
-    width: 100%;
+    width: 80vw;
     justify-content: space-between;
     padding: var(--padding-xs);
   }

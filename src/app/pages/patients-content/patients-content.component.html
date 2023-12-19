@@ -12,7 +12,7 @@
         <button class="search-bar1">
           <img class="patient-icon" alt="" src="assets/img/filter.svg" />
 
-          <div class="search1">Filter</div>
+          <div *ngIf="!shouldCollapse" class="search1">Filter</div>
         </button>
         <button class="search-bar1">
           <img
@@ -21,7 +21,7 @@
             src="assets/img/arrow-sort-down-lines.svg"
           />
 
-          <div class="search1">Sort</div>
+          <div *ngIf="!shouldCollapse" class="search1">Sort</div>
         </button>
       </div>
     </div>
@@ -34,7 +34,7 @@
           <b class="john-doe">{{patient.name + ' ' + patient.surname}}</b>
         </div>
         <div class="container1">
-          <button class="button1">
+          <button *ngIf="!shouldCollapse" class="button1">
             <div class="label4">View card</div>
           </button>
           <button class="round-button">

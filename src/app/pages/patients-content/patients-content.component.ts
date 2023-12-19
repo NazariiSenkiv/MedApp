@@ -6,6 +6,7 @@ import { CurrentUserService } from '../../services/current-user.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CustomPipesModule } from '../../pipes/custom-pipes/custom-pipes.module';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-patients-content',
@@ -18,10 +19,22 @@ export class PatientsContentComponent {
   protected patients: UserModel[] = []
   protected searchFullname: string = ""
 
+  protected shouldCollapse: boolean = false
+
   protected safe: SafeResourceUrl | null = null
 
-  constructor(private usersService: UsersService, private currentUserService: CurrentUserService, protected sanitizer: DomSanitizer) {
+  constructor(private usersService: UsersService, private currentUserService: CurrentUserService, protected sanitizer: DomSanitizer, private breakpointService: BreakpointObserver) {
     let currentUserId = currentUserService.getCurrentUserId()
+
+    breakpointService
+      .observe([Breakpoints.Small, Breakpoints.XSmall])
+      .subscribe(result => {
+        this.shouldCollapse = false
+
+        if (result.matches) {
+          this.shouldCollapse = true
+        }
+      })
 
     usersService.getWards(currentUserId).subscribe({
       next: (wards) => {
