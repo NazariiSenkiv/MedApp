@@ -508,6 +508,10 @@
     flex-shrink: 0;
   }
 
+  .centered {
+    margin: auto;
+  }
+
   .search22 {
     border: 0;
     font-family: var(--link);

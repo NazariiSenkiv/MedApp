@@ -21,7 +21,7 @@
             <div class="row justify-content-end">
                 <button class="action-button" (click)="back()">
                     <img
-                    class="add-square-icon"
+                    [class]="shouldCollapse ? 'add-square-icon centered' : 'add-square-icon'"
                     alt=""
                     src="assets/img/arrow-left.svg"
                     />
@@ -30,10 +30,10 @@
             </div>
             <div class="row justify-content-end">
                 <button class="done-button" (click)="readCurrentProviderData()">
-                    <img
-                    class="add-square-icon"
-                    alt=""
-                    src="assets/img/save.svg"
+                    <img 
+                        [class]="shouldCollapse ? 'add-square-icon centered' : 'add-square-icon'"
+                        alt=""
+                        src="assets/img/save.svg"
                     />
                     <div *ngIf="!shouldCollapse" class="">Read data</div>
                 </button>
@@ -106,7 +106,7 @@
             <div class="search-bar-parent1">
                 <button class="search-bar28">
                 <img
-                    class="add-square-icon"
+                    [class]="shouldCollapse ? 'add-square-icon centered' : 'add-square-icon'"
                     alt=""
                     src="assets/img/filter1.svg"
                 />
@@ -115,7 +115,7 @@
                 </button>
                 <button class="search-bar28">
                 <img
-                    class="add-square-icon"
+                    [class]="shouldCollapse ? 'add-square-icon centered' : 'add-square-icon'"
                     alt=""
                     src="assets/img/arrow-sort-down-lines1.svg"
                 />
@@ -142,7 +142,7 @@
               </div>
               <button [class]="shouldCollapse ? 'scaled search-bar13' : 'search-bar13'">
                 <img
-                  class="save-icon"
+                  [class]="shouldCollapse ? 'save-icon centered' : 'save-icon'"
                   alt=""
                   src="assets/img/arrow-counterclockwise.svg"
                 />
