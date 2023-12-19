@@ -148,6 +148,9 @@
   .search {
     align-self: stretch;
     position: relative;
+    &:focus{
+      outline: none;
+    }
   }
   .patients2 {
     margin: 0;
@@ -194,6 +197,11 @@
     padding: var(--padding-5xs);
     box-sizing: border-box;
     gap: var(--gap-5xs);
+    transition: outline .2s;
+    outline: 1px solid transparent;
+    &:focus-within{
+      outline: 1px solid black;
+    }
   }
   .search1 {
     position: relative;
