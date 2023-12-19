@@ -27,7 +27,7 @@
 .body {
     width: 60vw;
     margin: 10vh auto;
-    height: 100vh;
+    height: 60vh;
     align-content: center;
     align-items: center;
     gap: var(--gap-7xs);
