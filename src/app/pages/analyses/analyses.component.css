@@ -462,3 +462,7 @@
 .done-button:active {
   background-color: var(--primary-btn-clicked);
 }
+
+.centralized {
+  margin: 0 auto;
+}

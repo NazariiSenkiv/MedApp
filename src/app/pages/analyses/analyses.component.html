@@ -19,10 +19,11 @@
                 <button (click)="toMain()" class="action-button">
                     <img
                     class="add-square-icon"
+                    [class]="shouldCollapse ? 'centralized' : ''"
                     alt=""
                     src="assets/img/arrow-left.svg"
                     />
-                    <div class="search24">Back</div>
+                    <div *ngIf="!shouldCollapse" class="search24">Back</div>
                 </button>
             </div>
             <div class="frame-div"></div>
@@ -31,18 +32,20 @@
                     <button class="action-button">
                         <img
                         class="add-square-icon"
+                        [class]="shouldCollapse ? 'centralized' : ''"
                         alt=""
                         src="assets/img/arrow-download.svg"
                         />
-                        <div class="search24">Download</div>
+                        <div *ngIf="!shouldCollapse" class="search24">Download</div>
                     </button>
                     <button (click)="editMode = true" class="action-button">
                         <img
                         class="add-square-icon"
+                        [class]="shouldCollapse ? 'centralized' : ''"
                         alt=""
                         src="assets/img/edit.svg"
                         />
-                        <div class="search24">Edit</div>
+                        <div *ngIf="!shouldCollapse" class="search24">Edit</div>
                     </button>
                 </div>
             </div>
@@ -52,20 +55,22 @@
                 <button (click)="back()" class="action-button">
                     <img
                     class="add-square-icon"
+                    [class]="shouldCollapse ? 'centralized' : ''"
                     alt=""
                     src="assets/img/arrow-left.svg"
                     />
-                    <div class="search24">Back</div>
+                    <div *ngIf="!shouldCollapse" class="search24">Back</div>
                 </button>
             </div>
             <div type="submit" class="row justify-content-end">
                 <button [disabled]="hasErrors()" class="done-button">
                     <img
                     class="add-square-icon"
+                    [class]="shouldCollapse ? 'centralized' : ''"
                     alt=""
                     src="assets/img/save.svg"
                     />
-                    <div class="search24">Save</div>
+                    <div *ngIf="!shouldCollapse" class="search24">Save</div>
                 </button>
             </div>
         </div>
