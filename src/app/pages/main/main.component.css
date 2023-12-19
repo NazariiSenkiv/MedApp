@@ -14,10 +14,10 @@
   .menu1 {
     background-color: var(--gray-2);
     width: 12.6%;
-    height: 91.7vh;
+    height: 93vh;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--padding-5xs) 2.1vw var(--padding-9xs);
+    padding: 0 2.1vw 0;
   }
   
   .menu-min-width {

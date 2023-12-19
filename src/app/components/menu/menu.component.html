@@ -1,4 +1,4 @@
-<div>
+<div class="bunnons-container">
     <button *ngIf="isDoctor" [class]="currentOption == 'patients' ? 'menu-button button-active' : 'menu-button'" (mousedown)="handleClicked('patients')" >
       <img [class]="currentOption == 'patients' ? 'img-clicked' : 'patient-icon1'" alt="" src="assets/img/patient1.svg" />
       <div *ngIf="!hideButtonsText" class="">Patients</div>

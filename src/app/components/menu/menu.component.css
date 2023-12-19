@@ -47,6 +47,10 @@
     flex-shrink: 0;
 }
 
+.bunnons-container {
+  margin-top: 2vh;
+}
+
 .patient-icon1 {
     position: relative;
     width: 24px;
