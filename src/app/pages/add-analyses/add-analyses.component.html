@@ -1,20 +1,23 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-<div class="view-analyses">
+<div>
     <app-header></app-header>
 
-    <!-- bread chramps -->
     <div class="container">
-        <button class="search-bar25">
-            <a class="analyses5">Analyses</a>
-            <div class="div9">/</div>
-            <a class="analyses5">Blood Analyses </a>
-            <div class="div9">/</div>
-            <a class="analyses5">68000000005</a>
-        </button>
+      <div class="row justify-content-end">
+          <button (click)="back()" class="action-button">
+              <img
+                class="add-square-icon"
+                [class]="shouldCollapse ? 'centered' : ''"
+                alt=""
+                src="assets/img/arrow-left.svg"
+              />
+              <div *ngIf="!shouldCollapse" class="search24">Back</div>
+          </button>
+      </div>
     </div>
 
     <div class="add-analyses body">
-        
+
         <div class="dropdown">
           <div class="base">
             <div class="container17">

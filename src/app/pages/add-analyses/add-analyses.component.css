@@ -26,7 +26,7 @@
 
 .body {
     width: 60vw;
-    margin: 10vh auto;
+    margin: 5vh auto;
     height: 60vh;
     align-content: center;
     align-items: center;
@@ -230,4 +230,48 @@
 
 #btn-container {
   padding: 3vh;
+}
+
+.container {
+  gap: var(--gap-base);
+  width: 70vw;
+  
+  margin: 3vh auto;
+  align-content: center;
+  align-items: center;
+
+}
+.container {
+  justify-content: space-between;
+  padding: var(--padding-5xs);
+}
+
+.action-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs);
+  background-color: var(--gray-6);
+  border-radius: var(--br-5xs);
+  width: 10vw;
+  min-width: 40px;
+  max-width: 100px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  gap: var(--gap-5xs);
+}
+
+.centered {
+  margin: auto;
+}
+
+.action-button:hover{
+  background-color: var(--grey-lii);
+}
+.action-button:active{
+  background-color: var(--grey-li);
 }

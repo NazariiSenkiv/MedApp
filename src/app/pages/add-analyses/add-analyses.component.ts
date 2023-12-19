@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Location } from '@angular/common';
 
 import { UserModel } from '../../interfaces/user';
 import { AnalysisType } from '../../interfaces/analysis-type';
@@ -15,7 +17,7 @@ import { CurrentUserService } from '../../services/current-user.service';
     standalone: true,
     templateUrl: './add-analyses.component.html',
     styleUrl: './add-analyses.component.scss',
-    imports: [HeaderComponent, FormsModule, NgFor]
+    imports: [HeaderComponent, FormsModule, NgFor, NgIf]
 })
 export class AddAnalysesComponent {
     protected analysisGetType: string = "Manual"
@@ -26,8 +28,27 @@ export class AddAnalysesComponent {
     protected selected_patient_id: number = 0
     protected selected_analyses_type_id: number = 0
 
-    constructor(private router: Router, private usersService: UsersService, private analysesService: AnalysesService, private currentUserService: CurrentUserService) {
+    protected shouldCollapse: boolean = false
+
+    constructor(
+        private router: Router, 
+        private usersService: UsersService, 
+        private analysesService: AnalysesService, 
+        private currentUserService: CurrentUserService,
+        private breakpointService: BreakpointObserver,
+        private location: Location) 
+    {
         let currentUserId = currentUserService.getCurrentUserId()
+
+        breakpointService
+            .observe([Breakpoints.Small, Breakpoints.XSmall])
+            .subscribe(result => {
+                this.shouldCollapse = false
+
+                if (result.matches) {
+                    this.shouldCollapse = true
+                }
+            })
 
         usersService.getWards(currentUserId).subscribe({
             next: (wards) => {
@@ -89,5 +110,9 @@ export class AddAnalysesComponent {
             default:
                 break
         }
+    }
+
+    protected back() {
+        this.location.back()
     }
 }
