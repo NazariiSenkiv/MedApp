@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import { UsersService } from '../../services/users.service';
 import { DataProvider } from '../../interfaces/data-provider';
@@ -36,14 +37,27 @@ export class AnalysesAutoComponent {
 
     private lastAnalysisId: number = -1
 
+    protected shouldCollapse: boolean = false
+
     constructor(
         private location: Location, 
         private route: ActivatedRoute, 
         private usersService: UsersService, 
         private dataProvidersService: DataProvidersService,
         private analysesService: AnalysesService,
-        private router: Router) 
+        private router: Router,
+        private breakpointService: BreakpointObserver) 
     {
+        breakpointService
+            .observe([Breakpoints.Small, Breakpoints.XSmall])
+            .subscribe(result => {
+                this.shouldCollapse = false
+
+                if (result.matches) {
+                    this.shouldCollapse = true
+                }
+            })
+
         this.route.queryParams.subscribe(params => {
             this.patientId = parseInt(params['patient_id'])
             let analyses_type_id: number = parseInt(params['analyses_type_id'])

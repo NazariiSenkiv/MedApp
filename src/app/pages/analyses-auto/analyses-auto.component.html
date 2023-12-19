@@ -16,7 +16,7 @@
     <!-- loading pop-up -->
     <app-loading-popup *ngIf="isLoading"></app-loading-popup>
 
-    <div class="body">
+    <div [class]="shouldCollapse ? 'body wider': 'body'">
         <div class="container">
             <div class="row justify-content-end">
                 <button class="action-button" (click)="back()">
@@ -25,7 +25,7 @@
                     alt=""
                     src="assets/img/arrow-left.svg"
                     />
-                    <div class="search24">Back</div>
+                    <div *ngIf="!shouldCollapse" class="search24">Back</div>
                 </button>
             </div>
             <div class="row justify-content-end">
@@ -35,14 +35,14 @@
                     alt=""
                     src="assets/img/save.svg"
                     />
-                    <div class="">Read data</div>
+                    <div *ngIf="!shouldCollapse" class="">Read data</div>
                 </button>
             </div>
         </div>
 
-        <div class="row">
+        <div [class]="shouldCollapse ? 'col' : 'row'">
             <!-- Patient name -->
-            <div class="input20">
+            <div [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
                 <div class="base22">
                     <div class="container40">
                         <input disabled class="form-field22" type="text" [(ngModel)]="userName"/>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <!-- Date -->
-            <div class="input20">
+            <div [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
                 <div class="base22">
                 <div class="container40">
                     <input disabled class="form-field22" type="text" [(ngModel)]="date"/>
@@ -111,7 +111,7 @@
                     src="assets/img/filter1.svg"
                 />
 
-                <div class="search24">Filter</div>
+                <div *ngIf="!shouldCollapse" class="search24">Filter</div>
                 </button>
                 <button class="search-bar28">
                 <img
@@ -120,7 +120,7 @@
                     src="assets/img/arrow-sort-down-lines1.svg"
                 />
 
-                <div class="search24">Sort</div>
+                <div *ngIf="!shouldCollapse" class="search24">Sort</div>
                 </button>
             </div>
         </div>
@@ -129,24 +129,25 @@
             <div 
                 *ngFor="let provider of supportedDataProviders" 
                 (click)="setCurrentProvider(provider.id)" 
-                [class]="provider.id == currentProviderId ? 'table-row selected-row' : 'table-row'">
-              <div class="placeholder">
+                [class]="provider.id == currentProviderId ? 'table-row selected-row' : 'table-row'"
+            >
+              <div [class]="shouldCollapse ? 'scaled placeholder' : 'placeholder'">
                 <b class="text31">{{provider.name}}</b>
               </div>
-              <div class="placeholder1">
+              <div [class]="shouldCollapse ? 'scaled placeholder1' : 'placeholder1'">
                 <div class="text32">{{provider.type}}</div>
               </div>
-              <div class="placeholder2">
+              <div [class]="shouldCollapse ? 'scaled placeholder2' : 'placeholder2'">
                 <div class="text32">{{provider.status}}</div>
               </div>
-              <button class="search-bar13">
+              <button [class]="shouldCollapse ? 'scaled search-bar13' : 'search-bar13'">
                 <img
                   class="save-icon"
                   alt=""
                   src="assets/img/arrow-counterclockwise.svg"
                 />
     
-                <div class="search5">Refresh</div>
+                <div *ngIf="!shouldCollapse" class="search5">Refresh</div>
               </button>
             </div>
             
