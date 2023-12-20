@@ -146,7 +146,8 @@
             </div>
 
             <div *ngFor="let fields_pair of analysesType.fields | chunk: 2" [class]="shouldCollapse ? 'col': 'row'">
-                <div *ngIf="fields_pair[0]" [class]="shouldCollapse ? 'input20 fullwidth': 'input20'">
+                <div *ngIf="fields_pair[0]" 
+                    class="input20" [class]="shouldCollapse ? 'fullwidth' + (hasError(fields_pair[0].tag) ? ' margin-bottom' : '') : ''">
                     <div class="base22">
                         <div class="container40">
                             <input 
