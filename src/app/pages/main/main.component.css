@@ -1,7 +1,6 @@
 .header1,
 .patient-icon1,
 .profile-menu1 {
-    overflow: hidden;
     flex-shrink: 0;
 }
 
@@ -49,7 +48,6 @@
     position: relative;
     background-color: var(--white);
     width: 100%;
-    overflow: hidden;
     flex-direction: column;
     align-items: center;
   }

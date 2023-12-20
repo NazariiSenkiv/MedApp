@@ -15,8 +15,15 @@
         <img class="path-icon1" alt="" src="assets/img/path1.svg" />
       </div>
     </button>
-    <button class="expand-more1" (click)="exitToLogin()">
-      <img class="path-icon2" alt="" src="assets/img/path.svg" />
-    </button>
+    <div class="btn-group">
+      <button type="button" class="expand-more1 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <button class="dropdown-item" type="button">My Info</button>
+        <button class="dropdown-item" type="button">Options</button>
+        <div class="dropdown-divider"></div>
+        <button (click)="exitToLogin()" class="dropdown-item" type="button">Log Out</button>
+      </div>
+    </div>
   </div>
 </header>

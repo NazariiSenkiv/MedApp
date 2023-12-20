@@ -1,7 +1,6 @@
 .header1,
 .patient-icon1,
 .profile-menu1 {
-    overflow: hidden;
     flex-shrink: 0;
 }
 
@@ -111,4 +110,9 @@
     width: 12.6%;
     padding: 0 2.1vw;
     min-width: 50px;
+}
+
+.custom {
+    display: flex;
+    flex-wrap: wrap;
 }
